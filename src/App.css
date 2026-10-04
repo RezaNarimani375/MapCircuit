@@ -1,0 +1,2127 @@
+/* ==========================================================================
+   MapCircuit / Novin Pulse Lab - iPhone Native Web App Styling
+   ========================================================================== */
+
+/* Main Container Shell */
+.app-viewport-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #0d1527;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .app-viewport-wrapper {
+    padding: 24px 16px;
+    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+  }
+}
+
+.iphone-device-frame {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  background-color: #f4f6fa;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .iphone-device-frame {
+    border-radius: 46px;
+    min-height: 890px;
+    max-height: 94vh;
+    border: 10px solid #1e2530;
+  }
+}
+
+/* Simulated iPhone Status Bar (Shown on desktop, native on mobile) */
+.iphone-status-bar {
+  height: 44px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f6fa;
+  color: #1e293b;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 40;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.status-time {
+  font-family: system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.2px;
+}
+
+.status-dynamic-island {
+  width: 110px;
+  height: 28px;
+  background-color: #000000;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+.island-camera-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1e293b 0%, #020617 100%);
+  border: 1px solid #334155;
+}
+
+.status-icons-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1e293b;
+}
+
+.battery-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background: #e2e8f0;
+  padding: 2px 5px;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   APP HEADER
+   ========================================================================== */
+.app-top-header {
+  height: 60px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f6fa;
+  flex-shrink: 0;
+  z-index: 30;
+}
+
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-menu-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  border-radius: 12px;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.header-menu-button:active {
+  transform: scale(0.92);
+  background-color: #e2e8f0;
+}
+
+.header-page-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.online-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  display: inline-block;
+}
+
+.title-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: -0.2px;
+}
+
+/* Instagram Button on Left */
+.header-instagram-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.28);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.header-instagram-button:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 6px rgba(220, 39, 67, 0.2);
+}
+
+/* ==========================================================================
+   SCROLLABLE MAIN CONTENT
+   ========================================================================== */
+.app-scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 16px 100px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbars for clean iOS aesthetic */
+.app-scroll-content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* ==========================================================================
+   SEARCH SECTION
+   ========================================================================== */
+.search-section-wrapper {
+  margin: 6px 0 14px 0;
+}
+
+.search-pill-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* MapCircuit Badge on Right */
+.mapcircuit-badge {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 14px;
+  height: 48px;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.2);
+}
+
+.badge-car-icon {
+  stroke: #60a5fa;
+}
+
+.badge-text {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #e2e8f0;
+  margin-top: 1px;
+}
+
+/* Input pill */
+.search-input-inner {
+  flex: 1;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.search-input-inner:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-magnifier-icon {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.search-text-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font-size: 14.5px;
+  direction: rtl;
+  text-align: right;
+}
+
+.search-text-input::placeholder {
+  color: #94a3b8;
+  font-size: 13.5px;
+}
+
+.search-clear-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  color: #64748b;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+/* ==========================================================================
+   PROMOTIONAL AUTOPROG BANNER (Exact Match to Photo 2)
+   ========================================================================== */
+.promo-banner-wrapper {
+  margin-bottom: 20px;
+}
+
+.promo-banner-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e9f0;
+  position: relative;
+}
+
+.promo-banner-content {
+  padding: 16px 18px 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+  position: relative;
+}
+
+.promo-title-area {
+  flex: 1;
+  z-index: 2;
+}
+
+.promo-brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.promo-yellow-arc {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fbbf24 0%, #f59e0b 100%);
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
+}
+
+.promo-main-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.promo-subtitle {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #475569;
+  margin: 4px 0 8px 0;
+  line-height: 1.4;
+}
+
+.promo-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.promo-service-pill {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 8px;
+  border: 1px solid #dbeafe;
+}
+
+/* Graphic Mockup of Programmer / Diagnostic tool */
+.promo-graphic-area {
+  width: 86px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.programmer-device-mockup {
+  width: 72px;
+  height: 64px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1.5px solid #3b82f6;
+  box-shadow: 0 6px 14px rgba(30, 41, 59, 0.25);
+  position: relative;
+}
+
+.device-screen {
+  background-color: #0369a1;
+  border-radius: 6px;
+  height: 30px;
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  position: relative;
+}
+
+.screen-led-dot {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 4px #22c55e;
+}
+
+.screen-line {
+  height: 2.5px;
+  background-color: #bae6fd;
+  border-radius: 2px;
+  width: 80%;
+}
+
+.screen-line.short {
+  width: 50%;
+}
+
+.device-ports {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2px;
+}
+
+.device-ports .port {
+  width: 8px;
+  height: 4px;
+  background-color: #94a3b8;
+  border-radius: 1px;
+}
+
+/* Bottom Dark Strip */
+.promo-bottom-bar {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.promo-address-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.location-icon {
+  flex-shrink: 0;
+}
+
+.promo-location-text {
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: -0.2px;
+}
+
+.promo-website-link {
+  color: #fbbf24;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+/* Carousel Dots */
+.carousel-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  transition: all 0.25s ease;
+}
+
+.carousel-dot.active {
+  width: 22px;
+  height: 6px;
+  border-radius: 4px;
+  background-color: #2563eb;
+}
+
+/* ==========================================================================
+   BRANDS SECTION & CARDS (Exact match to Photo 1, 2, 3, 4)
+   ========================================================================== */
+.brands-list-section {
+  margin-top: 6px;
+}
+
+.brands-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-blue-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #1d4ed8;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(29, 78, 216, 0.4);
+}
+
+.section-heading-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.results-count-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  background-color: #eff6ff;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+/* Cards Grid / List */
+.brands-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.car-brand-card {
+  width: 100%;
+  height: 66px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e7ecf3;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  cursor: pointer;
+  text-align: right;
+}
+
+.car-brand-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-color: #bfdbfe;
+}
+
+/* Right: Brand Emblem */
+.brand-card-emblem {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Middle: Brand Persian Name */
+.brand-card-info {
+  flex: 1;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-persian-name {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.2px;
+}
+
+/* Left: Circular Light-Blue Button with Arrow */
+.brand-action-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0edff;
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.15s;
+}
+
+.car-brand-card:hover .brand-action-circle {
+  background-color: #cfe2fe;
+}
+
+.no-brands-found {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 36px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  border: 1px dashed #cbd5e1;
+  margin-top: 10px;
+}
+
+.no-result-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #334155;
+  margin: 12px 0 6px 0;
+}
+
+.no-result-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #94a3b8;
+  max-width: 280px;
+}
+
+/* ==========================================================================
+   BOTTOM NAVIGATION BAR (Deep Cobalt Blue Dock)
+   ========================================================================== */
+.bottom-dock-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 16px 14px 16px;
+  z-index: 45;
+  pointer-events: none;
+}
+
+.bottom-dock-inner {
+  pointer-events: auto;
+  background-color: #1e3a8a;
+  border-radius: 26px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10px;
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.4), 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dock-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: rgba(255, 255, 255, 0.65);
+  transition: all 0.2s ease;
+  height: 100%;
+}
+
+.dock-nav-item.active {
+  color: #ffffff;
+}
+
+.dock-icon-wrap {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.dock-nav-item.active .dock-icon-wrap {
+  transform: translateY(-2px);
+}
+
+.dock-item-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+/* iPhone Home Bar indicator */
+.iphone-home-indicator-bar {
+  width: 134px;
+  height: 5px;
+  background-color: #000000;
+  border-radius: 10px;
+  margin: 6px auto 0 auto;
+  opacity: 0.35;
+}
+
+/* ==========================================================================
+   BRAND DETAIL MODAL / SLIDE-UP VIEW
+   ========================================================================== */
+.brand-detail-view-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f6fa;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  animation: slideInFromLeft 0.25s ease-out;
+  overflow: hidden;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.brand-detail-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.detail-top-nav {
+  height: 58px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.detail-back-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1d4ed8;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 8px 4px;
+}
+
+.detail-header-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.detail-header-emblem {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-hero-card {
+  margin: 14px 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.brand-hero-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.brand-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-title-row h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.brand-en-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.brand-country-tag {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Sub-tabs */
+.detail-sub-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px;
+  overflow-x: auto;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.detail-sub-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-tab-btn {
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.sub-tab-btn.active {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+.detail-tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 30px 16px;
+}
+
+/* Models list styling */
+.models-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.car-model-item-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.model-main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.model-name {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.model-meta-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  font-size: 11.5px;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.model-diag-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.model-ecus-chips {
+  margin: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.chips-label {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.ecu-chip {
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #f8fafc;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.view-model-diags-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.15s;
+}
+
+.view-model-diags-btn:active {
+  background-color: #dbeafe;
+}
+
+/* ECU list styling */
+.ecus-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ecu-item-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.ecu-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ecu-title-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ecu-title-badge h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ecu-code-pill {
+  font-size: 11px;
+  font-weight: 800;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.ecu-pins-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  background-color: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.ecu-description {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 6px 0 10px 0;
+}
+
+.ecu-detail-row {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.ecu-fault-box {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #92400e;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.ecu-fault-box p {
+  margin: 3px 0 0 0;
+}
+
+.view-pinout-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Diagrams View & Pinout visualizer */
+.diagram-selector-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.diag-chip-btn {
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  white-space: nowrap;
+}
+
+.diag-chip-btn.active {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+.selected-diagram-sheet {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.diagram-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.sheet-title {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.sheet-desc {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.bookmark-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: #fef3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pin-filter-box {
+  margin-bottom: 12px;
+}
+
+.pin-search-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+  direction: rtl;
+  outline: none;
+}
+
+.pins-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 16px;
+}
+
+.pins-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: right;
+}
+
+.pins-table th {
+  background-color: #f8fafc;
+  padding: 9px 10px;
+  font-weight: 700;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pins-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+.pin-number-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.pin-color-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.voltage-pill {
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.connector-visualizer {
+  background-color: #0f172a;
+  border-radius: 14px;
+  padding: 14px;
+  color: #ffffff;
+}
+
+.visualizer-title {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.connector-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.pin-socket-slot {
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid #334155;
+}
+
+.slot-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   OTHER VIEWS: PRACTICAL INFO, TUTORIALS, ACCOUNT
+   ========================================================================== */
+.tab-view-container {
+  padding-bottom: 40px;
+}
+
+.tab-view-header {
+  margin-bottom: 14px;
+}
+
+.tab-view-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.tab-view-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.category-chips-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-bottom: 14px;
+  padding-bottom: 4px;
+}
+
+.category-chips-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.category-chip {
+  padding: 7px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  white-space: nowrap;
+}
+
+.category-chip.active {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+/* OBD List */
+.obd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.obd-card-item {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.obd-card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.obd-code-badge {
+  font-size: 14px;
+  font-weight: 900;
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: system-ui, sans-serif;
+}
+
+.obd-category-tag {
+  font-size: 11px;
+  color: #64748b;
+  background-color: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.obd-title-fa {
+  margin: 0 0 2px 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.obd-title-en {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: system-ui, sans-serif;
+  margin-bottom: 10px;
+}
+
+.obd-detail-block {
+  font-size: 12px;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.obd-detail-block strong {
+  color: #0f172a;
+}
+
+.obd-solution-box {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #166534;
+  margin-top: 8px;
+}
+
+/* Sensors */
+.sensors-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sensor-card-item {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.sensor-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sensor-card-header h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.sensor-pins-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  background-color: #eff6ff;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.sensor-role {
+  font-size: 12px;
+  color: #475569;
+  margin: 4px 0 10px 0;
+}
+
+.sensor-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background-color: #f8fafc;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-label {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.spec-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sensor-troubleshoot-box {
+  font-size: 12px;
+  color: #1e3a8a;
+  background-color: #eff6ff;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+/* OBD-II Socket Guide */
+.socket-guide-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.socket-guide-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.socket-guide-card p {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.socket-pins-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.socket-pin-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.socket-pin-row.highlight-blue {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.socket-pin-row.highlight-orange {
+  background-color: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.socket-pin-row.highlight-red {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+.pin-num-badge {
+  font-size: 11px;
+  font-weight: 800;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 3px 6px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.socket-pin-row strong {
+  font-size: 12.5px;
+  display: block;
+}
+
+.socket-pin-row p {
+  margin: 2px 0 0 0;
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* Articles */
+.articles-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tutorial-article-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tutorial-article-card:active {
+  transform: scale(0.98);
+}
+
+.article-meta-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.article-title {
+  margin: 0 0 8px 0;
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.4;
+}
+
+.article-summary {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.article-tags-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.article-tag-chip {
+  font-size: 11px;
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.article-read-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1d4ed8;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Article Modal */
+.article-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.article-modal-container {
+  width: 100%;
+  max-width: 440px;
+  max-height: 85vh;
+  background-color: #ffffff;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.article-modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.close-modal-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.modal-category-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.modal-article-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: #0f172a;
+}
+
+.modal-meta-info {
+  display: flex;
+  gap: 14px;
+  font-size: 11.5px;
+  color: #64748b;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.article-paragraph {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.article-tips-container {
+  background-color: #fffbeb;
+  border: 1px solid #fef08a;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 16px 0;
+}
+
+.article-tips-container h4 {
+  margin: 0 0 8px 0;
+  font-size: 13.5px;
+  color: #854d0e;
+}
+
+.article-tips-container ul {
+  margin: 0;
+  padding-right: 18px;
+  font-size: 12.5px;
+  color: #92400e;
+  line-height: 1.6;
+}
+
+.article-finish-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+/* Account View */
+.account-profile-card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  border-radius: 22px;
+  padding: 18px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.25);
+}
+
+.profile-avatar-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-user-name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.vip-badge {
+  font-size: 10px;
+  font-weight: 800;
+  background-color: #fbbf24;
+  color: #78350f;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.profile-phone-text {
+  margin: 4px 0 0 0;
+  font-size: 11.5px;
+  opacity: 0.85;
+}
+
+.account-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.account-stat-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-number {
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+  color: #1d4ed8;
+}
+
+.stat-label {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.account-options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-row-item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s;
+}
+
+.option-row-item:active {
+  transform: scale(0.98);
+}
+
+.option-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.option-icon-wrap.blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.option-icon-wrap.instagram {
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+  color: #ffffff;
+}
+
+.option-icon-wrap.cyan {
+  background-color: #ecfeff;
+  color: #0891b2;
+}
+
+.option-icon-wrap.green {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.option-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.option-content strong {
+  font-size: 13.5px;
+  color: #1e293b;
+}
+
+.option-content span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.option-arrow {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.account-footer-note {
+  margin-top: 26px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.version-info {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.copyright-info {
+  margin: 4px 0 0 0;
+  font-size: 10.5px;
+}
+
+/* ==========================================================================
+   SIDE DRAWER MENU
+   ========================================================================== */
+.side-drawer-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  z-index: 55;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.side-drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 290px;
+  background-color: #ffffff;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  animation: slideDrawer 0.25s ease-out;
+}
+
+@keyframes slideDrawer {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.drawer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.drawer-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.drawer-subtitle {
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+.drawer-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #64748b;
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.drawer-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  text-decoration: none;
+  transition: background-color 0.15s;
+  text-align: right;
+}
+
+.drawer-nav-link:hover, .drawer-nav-link:active {
+  background-color: #f1f5f9;
+}
+
+.drawer-nav-link.instagram-link {
+  color: #be185d;
+}
+
+.drawer-divider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 8px 0;
+}
+
+.drawer-footer {
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   INSTAGRAM MODAL
+   ========================================================================== */
+.instagram-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.instagram-modal-card {
+  width: 100%;
+  max-width: 340px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.2s ease-out;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.insta-header-gradient {
+  height: 90px;
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.insta-close-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.insta-avatar-ring {
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.insta-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta-content-body {
+  padding: 40px 20px 20px 20px;
+  text-align: right;
+}
+
+.insta-page-name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.insta-handle {
+  display: block;
+  font-size: 12px;
+  color: #be185d;
+  font-family: system-ui, sans-serif;
+  margin: 2px 0 10px 0;
+}
+
+.insta-bio {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 18px;
+}
+
+.insta-actions-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.insta-primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.telegram-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f0fdfa;
+  color: #0d9488;
+  border: 1px solid #99f6e4;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+}
