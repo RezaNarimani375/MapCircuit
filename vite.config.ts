@@ -4,14 +4,14 @@ import { VitePWA } from 'vite-plugin-pwa'
 import dyadComponentTagger from '@dyad-sh/react-vite-component-tagger'
 
 // GitHub Pages repository name is /MapCircuit/
-const isProd = process.env.NODE_ENV === 'production'
-const basePath = process.env.VITE_BASE_URL || (isProd ? '/MapCircuit/' : '/')
+const basePath = process.env.VITE_BASE_URL || '/'
 
 export default defineConfig({
   base: basePath,
   server: {
     host: '0.0.0.0',
     port: 3000,
+    allowedHosts: true,
   },
   plugins: [
     dyadComponentTagger(),
